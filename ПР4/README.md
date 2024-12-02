@@ -81,6 +81,9 @@ if (isset($_GET['Submit'])) {
 ```
 
 ### Использовать sqlmap для нахождения уязвимости в веб-ресурсе
+> Выполнил проверку с помощью SQLMap CLI с уровнем риска 3 и уровнем глубины проверки 5
+>
+> В результе проверки sqlmap определил подверженные sql injection параметры - `id`
 ```bash
 DVWA git:(master) ✗ sqlmap -u "http://127.0.0.1:4280/vulnerabilities/sqli_blind/?id=1&Submit=Submit#" --batch --risk=3 --level=5 --cookie="PHPSESSID=939a3dbf8d893a151afb25dadd50ddc0; security=low"
         ___
@@ -117,6 +120,15 @@ back-end DBMS: MySQL >= 5.0.12 (MariaDB fork)
 ```
 
 ### Использовать Burp для нахождения уязвимости в веб-ресурсе
-```bash
 
-```
+#### Успешное использование Burp Repeater
+![Успешное использование Burp Repeater](./assets/burp-repeater-1.png)
+
+#### Выполнение ручной SQL Injection с помощью Burp Repeater \', которая приводит к ошибке
+![Выполнение ручной SQL Injection с помощью Burp Repeater \', которая приводит к ошибке](./assets/burp-repeater-2-injection.png)
+
+#### Выполнение ручной SQL Injection с помощью Burp Repeater \', которая приводит к ошибке
+![Выполнение ручной SQL Injection с помощью Burp Repeater \', которая приводит к ошибке](./assets/burp-repeater-3-injection.png)
+
+#### Успешное использование Burp Intruder и выполнение ряда sql инъекций после который получилось понять, сколько столбцов имеет таблица users
+![Успешное использование Burp Intruder](./assets/burp-intruder-4.png)
