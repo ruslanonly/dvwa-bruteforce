@@ -1,6 +1,21 @@
 # Практическая работа 4
 ## Необходимо найти участок кода, содержащий инъекцию SQL кода в задании Blind Sql Injection на сайте dvwa.local с использованием статического анализатора кода (Можно использовать официальный ресурс или виртуальную машину Web Security Dojo)
 
+Запустил sonar-scanner в папке sql-blind в DVWA репозитории
+```bash
+sonar.projectKey=blind-sql-injection-practice
+sonar.projectName=blind-sql-injection-practice
+sonar.projectVersion=1.0
+sonar.sources=.
+sonar.language=php
+sonar.host.url=http://localhost:9000
+sonar.login=sqp_6192d3b650155f1eb17d31ececb0029373472fdf
+```
+
+### Найденные ошибки
+![Ошибки](./assets/sonar-review-1.png)
+![Ошибки](./assets/sonar-review-2.png)
+![Ошибки](./assets/sonar-review-3.png)
 
 ## Проанализировать код и сделать кодревью, указав слабые места
 ``` php
